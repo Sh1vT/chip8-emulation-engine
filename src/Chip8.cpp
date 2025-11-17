@@ -1,19 +1,27 @@
-#include <Chip8.h>
+#include <Chip8.hpp>
 #include <fstream>
 #include <iostream>
 #include <random>
 
-//opcodes
+/*
 
-// Any chip8 opcode is of 4 hexplaces / 16 bits
-// first hexplace / 4 bits is the type of instruction, next 3 hexplace / 12 bits are the address
+This is the cpu file of chip8. Its supposed to implement the header of same name, plus define some free functions for managing 
+chip8 opcodes. Theres exactly 34 opcodes, and the notation of opcode is present in docs for convenience.
 
-// So every instruction has this structure:
-// OP A B C
-// ↑  └─── 12-bit argument (addr, value, register pair, etc.)
-// └────── 4-bit operation code
+OPCODES
 
-//most opcode functions will require the opcode to perform calc on address, some specific ones like CLS and RET dont need it
+Any chip8 opcode is of 4 hexplaces / 16 bits
+first hexplace / 4 bits is the type of instruction, next 3 hexplace / 12 bits are the address
+
+So every instruction has this structure:
+OP A B C
+↑  └─── 12-bit argument (addr, value, register pair, etc.)
+└────── 4-bit operation code
+
+most opcode functions will require the opcode to perform calc on address, some specific ones like CLS and RET dont need it
+
+*/
+
 
 //00E0: CLS
 void OP_00E0 (Chip8 &c) {
