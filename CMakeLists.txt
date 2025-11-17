@@ -12,6 +12,8 @@ find_package(SDL2 CONFIG REQUIRED)
 
 add_executable(chip8
     src/main.cpp
+    src/Chip8.cpp
+    src/SDL2Display.cpp
 )
 
 
