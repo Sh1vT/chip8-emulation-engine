@@ -16,7 +16,7 @@ cmake -B build
 cmake --build build
 ```
 
-The executable will be generated in the `build` directory.
+The executable will be generated in `build` directory.
 
 ## Running
 
